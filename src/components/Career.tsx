@@ -71,16 +71,17 @@ const Career = () => {
           <div className="career-info-box">
             <div className="career-info-in">
               <div className="career-role">
-                <h4>Staff Engineer</h4>
+                <h4>Principal Engineer</h4>
                 <h5>G2</h5>
               </div>
               <h3>NOW</h3>
             </div>
             <p>
-              Currently serving as Staff Engineer at G2, building scalable, data-driven solutions for the world's
+              Currently serving as Principal Engineer at G2, building scalable, data-driven solutions for the world's
               largest software marketplace. Architects Ruby on Rails applications on AWS (ECS, RDS, ElastiCache)
               handling millions of user interactions monthly. Drives system architecture decisions, mentors
-              engineering teams, and leads AI-driven feature adoption. Recognized as Most Valuable Professional in 2024.
+              engineering teams, and leads AI-driven feature adoption. Recognized as Peak Professional of the Year 2026
+              and Most Valuable Professional in 2024.
             </p>
           </div>
         </div>

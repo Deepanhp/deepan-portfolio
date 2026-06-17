@@ -11,14 +11,22 @@ gsap.registerPlugin(useGSAP);
 const achievements = [
   {
     id: "01",
-    title: "Most Valuable Professional Award",
-    company: "G2 - 2024",
-    description: "Recognized for outstanding professional contributions, team collaboration, and technical leadership excellence at G2",
-    image: "/images/mvp.jpeg",
-    alt: "Deepan Kumar receiving Most Valuable Professional Award at G2 2024"
+    title: "Peak Professional of the Year",
+    company: "G2 - 2026",
+    description: "Recognized as Peak Professional of the Year for exceptional professional excellence and outstanding contributions to the engineering organization",
+    image: "/images/peak-professional.jpeg",
+    alt: "Deepan Kumar receiving Peak Professional of the Year Award at G2 2026"
   },
   {
     id: "02",
+    title: "Principal Engineer Promotion",
+    company: "G2 - 2026",
+    description: "Promoted to Principal Engineer for technical leadership, architectural excellence, and driving cross-team initiatives",
+    image: "/images/principal-engineer.svg",
+    alt: "Deepan Kumar promoted to Principal Engineer at G2"
+  },
+  {
+    id: "03",
     title: "AI at Runtime - Self-Healing Apps",
     company: "RubyConfIndia2025 Speaker",
     description: "Delivered keynote on how applications can actively adapt, recover and heal themselves during runtime using AI",
@@ -26,7 +34,23 @@ const achievements = [
     alt: "Deepan Kumar speaking at RubyConf India 2025 on AI at Runtime"
   },
   {
-    id: "03",
+    id: "04",
+    title: "Most Valuable Professional Award",
+    company: "G2 - 2024",
+    description: "Recognized for outstanding professional contributions, team collaboration, and technical leadership excellence at G2",
+    image: "/images/mvp.jpeg",
+    alt: "Deepan Kumar receiving Most Valuable Professional Award at G2 2024"
+  },
+  {
+    id: "05",
+    title: "Technical Mentorship Excellence",
+    company: "G2 - 2024",
+    description: "Awarded for outstanding mentorship, knowledge sharing, and fostering engineering talent across teams",
+    image: "/images/mentorship-excellence.svg",
+    alt: "Deepan Kumar technical mentorship excellence award"
+  },
+  {
+    id: "06",
     title: "3rd Place Winner",
     company: "G2 Hackathon FY25",
     description: "Achieved 3rd place in company-wide hackathon, collaborating with brilliant minds to tackle challenging technical problems",
@@ -34,28 +58,12 @@ const achievements = [
     alt: "Deepan Kumar team winning 3rd place at G2 Hackathon FY25"
   },
   {
-    id: "04",
+    id: "07",
     title: "AI and Engineering Panel Expert",
     company: "RubyConfIndia2025 Panelist",
     description: "Participated in expert panel discussion sharing insights about AI's role and impact on software engineering",
     image: "/images/panel.jpeg",
     alt: "Deepan Kumar participating in AI and Engineering panel at RubyConf India 2025"
-  },
-  {
-    id: "05",
-    title: "Technical Mentorship Excellence",
-    company: "Cross-Company Recognition",
-    description: "Now available on Topmate for Rails guidance, app scaling consultation, and tech career mentorship",
-    image: "/images/placeholder.webp",
-    alt: "Deepan Kumar technical mentorship and career guidance services"
-  },
-  {
-    id: "06",
-    title: "Staff Engineer Promotion",
-    company: "G2 - Current Role",
-    description: "Promoted to Staff Engineer for building scalable, data-driven solutions and technical leadership in microservices",
-    image: "/images/placeholder.webp",
-    alt: "Deepan Kumar as Staff Engineer at G2"
   }
 ];
 
