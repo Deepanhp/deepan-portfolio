@@ -1,0 +1,31 @@
+src/components/Work.tsx
+  s_8e9ce2de1c9294::t_a71da588c0dd0a 53,61
+  s_8e9ce2de1c9294::t_b65e403fa70afd 14-18,22-29,37-52
+src/components/About.tsx
+  s_8e9ce2de1c9294::t_ff4c54ce50c5ea 7,9-13
+public/images/mentorship-excellence.svg
+  s_8e9ce2de1c9294::t_219819d6c5dbdc 1-48
+public/images/principal-engineer.svg
+  s_8e9ce2de1c9294::t_5c19410f2cec45 1-39
+index.html
+  s_8e9ce2de1c9294::t_6d27dc8c5c0555 57,63,65-72
+  s_8e9ce2de1c9294::t_6cd86375f1a588 8-10
+src/components/Career.tsx
+  s_8e9ce2de1c9294::t_4de630e4a60c6c 74,80,83-84
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.8",
+  "base_commit_sha": "13c8a76583fb56f605bee704983655b3abd5cf3b",
+  "prompts": {},
+  "sessions": {
+    "s_8e9ce2de1c9294": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "31b77380-1d66-490c-9a7f-fdee8bbab436",
+        "model": "claude-sonnet-4-5-20250929"
+      },
+      "human_author": "deepan-g2 <dkumar@g2.com>"
+    }
+  }
+}
