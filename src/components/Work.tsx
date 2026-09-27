@@ -1,5 +1,6 @@
 import "./styles/Work.css";
 import WorkImage from "./WorkImage";
+import WorkGallery from "./WorkGallery";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { MdArrowBackIos, MdArrowForwardIos } from "react-icons/md";
@@ -8,9 +9,34 @@ import { createPortal } from "react-dom";
 
 gsap.registerPlugin(useGSAP);
 
-const achievements = [
+interface Achievement {
+  id: string;
+  title: string;
+  company: string;
+  description: string;
+  image?: string;
+  images?: string[];
+  alt: string;
+}
+
+const achievements: Achievement[] = [
   {
     id: "01",
+    title: "From AI We Ask, to AI That Watches: Building JARVIS",
+    company: "G2 MYMU 2026 Speaker",
+    description: "Presented the journey of building JARVIS at G2's Mid-Year Meetup (APAC) - from AI we ask, to AI that watches",
+    images: [
+      "/images/mymu2026/mymu-1.jpeg",
+      "/images/mymu2026/mymu-2.jpeg",
+      "/images/mymu2026/mymu-3.jpeg",
+      "/images/mymu2026/mymu-4.jpeg",
+      "/images/mymu2026/mymu-5.jpeg",
+      "/images/mymu2026/mymu-6.jpeg"
+    ],
+    alt: "Deepan Kumar presenting JARVIS at G2 MYMU 2026"
+  },
+  {
+    id: "02",
     title: "Peak Professional of the Year",
     company: "G2 - 2026",
     description: "Recognized as Peak Professional of the Year for exceptional professional excellence and outstanding contributions to the engineering organization",
@@ -18,7 +44,7 @@ const achievements = [
     alt: "Deepan Kumar receiving Peak Professional of the Year Award at G2 2026"
   },
   {
-    id: "02",
+    id: "03",
     title: "Principal Engineer Promotion",
     company: "G2 - 2026",
     description: "Promoted to Principal Engineer for technical leadership, architectural excellence, and driving cross-team initiatives",
@@ -26,7 +52,7 @@ const achievements = [
     alt: "Deepan Kumar promoted to Principal Engineer at G2"
   },
   {
-    id: "03",
+    id: "04",
     title: "AI at Runtime - Self-Healing Apps",
     company: "RubyConfIndia2025 Speaker",
     description: "Delivered keynote on how applications can actively adapt, recover and heal themselves during runtime using AI",
@@ -34,7 +60,7 @@ const achievements = [
     alt: "Deepan Kumar speaking at RubyConf India 2025 on AI at Runtime"
   },
   {
-    id: "04",
+    id: "05",
     title: "Most Valuable Professional Award",
     company: "G2 - 2024",
     description: "Recognized for outstanding professional contributions, team collaboration, and technical leadership excellence at G2",
@@ -42,7 +68,7 @@ const achievements = [
     alt: "Deepan Kumar receiving Most Valuable Professional Award at G2 2024"
   },
   {
-    id: "05",
+    id: "06",
     title: "Technical Mentorship Excellence",
     company: "G2 - 2024",
     description: "Awarded for outstanding mentorship, knowledge sharing, and fostering engineering talent across teams",
@@ -50,7 +76,7 @@ const achievements = [
     alt: "Deepan Kumar technical mentorship excellence award"
   },
   {
-    id: "06",
+    id: "07",
     title: "3rd Place Winner",
     company: "G2 Hackathon FY25",
     description: "Achieved 3rd place in company-wide hackathon, collaborating with brilliant minds to tackle challenging technical problems",
@@ -58,7 +84,7 @@ const achievements = [
     alt: "Deepan Kumar team winning 3rd place at G2 Hackathon FY25"
   },
   {
-    id: "07",
+    id: "08",
     title: "AI and Engineering Panel Expert",
     company: "RubyConfIndia2025 Panelist",
     description: "Participated in expert panel discussion sharing insights about AI's role and impact on software engineering",
@@ -111,7 +137,7 @@ const Work = () => {
       <div className="work-section" id="work">
         <div className="work-container section-container">
           <h1>
-            Deepan Kumar's Awards & <span>Achievements</span>
+            Deepan Kumar's Career <span>Highlights</span>
           </h1>
 
           <div className="carousel-scene">
@@ -135,19 +161,26 @@ const Work = () => {
                             <p>{achievement.company}</p>
                           </div>
                         </div>
-                        <h4>Achievement highlights</h4>
+                        <h4>Highlights</h4>
                         <p>{achievement.description}</p>
                       </div>
-                      <div className="work-image-clickable">
-                        <WorkImage
-                          image={achievement.image}
+                      {achievement.images ? (
+                        <WorkGallery
+                          images={achievement.images}
                           alt={achievement.alt}
-                          onClick={() => {
-                            console.log("Opening fullscreen for:", achievement.image);
-                            setFullscreenImage(achievement.image);
-                          }}
+                          onImageClick={setFullscreenImage}
                         />
-                      </div>
+                      ) : (
+                        <div className="work-image-clickable">
+                          <WorkImage
+                            image={achievement.image!}
+                            alt={achievement.alt}
+                            onClick={() => {
+                              setFullscreenImage(achievement.image!);
+                            }}
+                          />
+                        </div>
+                      )}
                     </div>
                   </div>
                 );
