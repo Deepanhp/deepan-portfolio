@@ -17,6 +17,7 @@ interface Achievement {
   image?: string;
   images?: string[];
   alt: string;
+  contain?: boolean;
 }
 
 const achievements: Achievement[] = [
@@ -37,6 +38,15 @@ const achievements: Achievement[] = [
   },
   {
     id: "02",
+    title: "Claude Certified Architect - Foundations",
+    company: "Anthropic - 2026",
+    description: "Earned Anthropic's Claude Certified Architect (Foundations) certification, validating expertise in designing and building production-grade AI agent systems",
+    image: "/images/claude-certified-architect.png",
+    alt: "Claude Certified Architect - Foundations badge by Anthropic",
+    contain: true
+  },
+  {
+    id: "03",
     title: "Peak Professional of the Year",
     company: "G2 - 2026",
     description: "Recognized as Peak Professional of the Year for exceptional professional excellence and outstanding contributions to the engineering organization",
@@ -44,7 +54,7 @@ const achievements: Achievement[] = [
     alt: "Deepan Kumar receiving Peak Professional of the Year Award at G2 2026"
   },
   {
-    id: "03",
+    id: "04",
     title: "Principal Engineer Promotion",
     company: "G2 - 2026",
     description: "Promoted to Principal Engineer for technical leadership, architectural excellence, and driving cross-team initiatives",
@@ -52,7 +62,7 @@ const achievements: Achievement[] = [
     alt: "Deepan Kumar promoted to Principal Engineer at G2"
   },
   {
-    id: "04",
+    id: "05",
     title: "AI at Runtime - Self-Healing Apps",
     company: "RubyConfIndia2025 Speaker",
     description: "Delivered keynote on how applications can actively adapt, recover and heal themselves during runtime using AI",
@@ -60,7 +70,7 @@ const achievements: Achievement[] = [
     alt: "Deepan Kumar speaking at RubyConf India 2025 on AI at Runtime"
   },
   {
-    id: "05",
+    id: "06",
     title: "Most Valuable Professional Award",
     company: "G2 - 2024",
     description: "Recognized for outstanding professional contributions, team collaboration, and technical leadership excellence at G2",
@@ -68,7 +78,7 @@ const achievements: Achievement[] = [
     alt: "Deepan Kumar receiving Most Valuable Professional Award at G2 2024"
   },
   {
-    id: "06",
+    id: "07",
     title: "Technical Mentorship Excellence",
     company: "G2 - 2024",
     description: "Awarded for outstanding mentorship, knowledge sharing, and fostering engineering talent across teams",
@@ -76,7 +86,7 @@ const achievements: Achievement[] = [
     alt: "Deepan Kumar technical mentorship excellence award"
   },
   {
-    id: "07",
+    id: "08",
     title: "3rd Place Winner",
     company: "G2 Hackathon FY25",
     description: "Achieved 3rd place in company-wide hackathon, collaborating with brilliant minds to tackle challenging technical problems",
@@ -84,7 +94,7 @@ const achievements: Achievement[] = [
     alt: "Deepan Kumar team winning 3rd place at G2 Hackathon FY25"
   },
   {
-    id: "08",
+    id: "09",
     title: "AI and Engineering Panel Expert",
     company: "RubyConfIndia2025 Panelist",
     description: "Participated in expert panel discussion sharing insights about AI's role and impact on software engineering",
@@ -175,6 +185,7 @@ const Work = () => {
                           <WorkImage
                             image={achievement.image!}
                             alt={achievement.alt}
+                            contain={achievement.contain}
                             onClick={() => {
                               setFullscreenImage(achievement.image!);
                             }}

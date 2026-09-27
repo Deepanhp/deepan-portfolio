@@ -7,6 +7,7 @@ interface Props {
   video?: string;
   link?: string;
   onClick?: () => void;
+  contain?: boolean;
 }
 
 const WorkImage = (props: Props) => {
@@ -29,7 +30,11 @@ const WorkImage = (props: Props) => {
           <MdArrowOutward />
         </div>
       )}
-      <img src={props.image} alt={props.alt} />
+      <img
+        src={props.image}
+        alt={props.alt}
+        style={props.contain ? { objectFit: "contain" } : undefined}
+      />
       {isVideo && <video src={video} autoPlay muted playsInline loop></video>}
     </>
   );
