@@ -98,6 +98,7 @@ const WhatIDo = () => {
               <div className="what-content-flex">
                 <div className="what-tags">Ruby</div>
                 <div className="what-tags">Rails</div>
+                <div className="what-tags">Stimulus</div>
                 <div className="what-tags">Javascript</div>
                 <div className="what-tags">Python</div>
                 <div className="what-tags">MySQL</div>
@@ -136,6 +137,7 @@ const WhatIDo = () => {
                 <div className="what-tags">AWS</div>
                 <div className="what-tags">System Design</div>
                 <div className="what-tags">Microservices</div>
+                <div className="what-tags">Kafka</div>
               </div>
               <div className="what-arrow"></div>
             </div>

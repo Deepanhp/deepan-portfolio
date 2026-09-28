@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Primary Meta Tags -->
+    <title>The Two Tools That Stopped Claude from Eating My Wallet (90% Savings, No Joke) - Deepan Kumar's Blog</title>
+    <meta name="title" content="The Two Tools That Stopped Claude from Eating My Wallet (90% Savings, No Joke) - Deepan Kumar's Blog" />
+    <meta name="description" content="
+I still remember the day I opened my Claude API bill and had to sit down.
+$1,247.89. For one month. And that was after I thought I’d optimized my workflow. I w" />
+    <meta name="keywords" content="anthropic-claude, cost-optimization, claude-code, claude, token, Deepan Kumar, Software Engineering, Blog" />
+    <meta name="author" content="Deepan Kumar" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://www.deepankumar.com/blog/the-two-tools-that-stopped-claude-from-eating-my-wallet-90-savings-no-joke.html" />
+    <meta property="og:title" content="The Two Tools That Stopped Claude from Eating My Wallet (90% Savings, No Joke)" />
+    <meta property="og:description" content="
+I still remember the day I opened my Claude API bill and had to sit down.
+$1,247.89. For one month. And that was after I thought I’d optimized my workflow. I w" />
+    <meta property="og:image" content="https://cdn-images-1.medium.com/max/1024/1*NFzpLWYccPaSyPLyfZvNEw.jpeg" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://www.deepankumar.com/blog/the-two-tools-that-stopped-claude-from-eating-my-wallet-90-savings-no-joke.html" />
+    <meta property="twitter:title" content="The Two Tools That Stopped Claude from Eating My Wallet (90% Savings, No Joke)" />
+    <meta property="twitter:description" content="
+I still remember the day I opened my Claude API bill and had to sit down.
+$1,247.89. For one month. And that was after I thought I’d optimized my workflow. I w" />
+    <meta property="twitter:image" content="https://cdn-images-1.medium.com/max/1024/1*NFzpLWYccPaSyPLyfZvNEw.jpeg" />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.deepankumar.com/blog/the-two-tools-that-stopped-claude-from-eating-my-wallet-90-savings-no-joke.html" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/images/logo.png" />
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "The Two Tools That Stopped Claude from Eating My Wallet (90% Savings, No Joke)",
+      "description": "
+I still remember the day I opened my Claude API bill and had to sit down.
+$1,247.89. For one month. And that was after I thought I’d optimized my workflow. I w",
+      "image": "https://cdn-images-1.medium.com/max/1024/1*NFzpLWYccPaSyPLyfZvNEw.jpeg",
+      "author": {
+        "@type": "Person",
+        "name": "Deepan Kumar",
+        "url": "https://www.deepankumar.com",
+        "jobTitle": "Staff Engineer",
+        "worksFor": {
+          "@type": "Organization",
+          "name": "G2"
+        }
+      },
+      "publisher": {
+        "@type": "Person",
+        "name": "Deepan Kumar"
+      },
+      "datePublished": "2026-06-17 15:03:30",
+      "url": "https://www.deepankumar.com/blog/the-two-tools-that-stopped-claude-from-eating-my-wallet-90-savings-no-joke.html",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://www.deepankumar.com/blog/the-two-tools-that-stopped-claude-from-eating-my-wallet-90-savings-no-joke.html"
+      },
+      "keywords": "anthropic-claude, cost-optimization, claude-code, claude, token"
+    }
+    </script>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+        background: #000;
+        color: #fff;
+        line-height: 1.6;
+        min-height: 100vh;
+      }
+
+      .blog-post-page {
+        padding: 80px 20px 40px;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .back-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        color: #fff;
+        text-decoration: none;
+        font-size: 1rem;
+        margin-bottom: 2rem;
+        padding: 8px 16px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 4px;
+        transition: all 0.3s ease;
+      }
+
+      .back-link:hover {
+        background: rgba(255, 255, 255, 0.1);
+        border-color: rgba(255, 255, 255, 0.4);
+      }
+
+      .blog-post-content {
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 12px;
+        padding: 40px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .blog-post-hero {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+        margin-bottom: 2rem;
+      }
+
+      .blog-post-meta {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        margin-bottom: 1.5rem;
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 0.9rem;
+        flex-wrap: wrap;
+      }
+
+      .blog-post-categories {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+
+      .category-tag {
+        padding: 4px 12px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 4px;
+        font-size: 0.85rem;
+      }
+
+      h1 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        line-height: 1.2;
+      }
+
+      .blog-post-author {
+        margin-bottom: 2rem;
+        padding-bottom: 2rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        color: rgba(255, 255, 255, 0.8);
+      }
+
+      .blog-post-body {
+        line-height: 1.8;
+        font-size: 1.1rem;
+      }
+
+      .blog-post-body h2 {
+        font-size: 1.8rem;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+      }
+
+      .blog-post-body h3 {
+        font-size: 1.4rem;
+        margin-top: 1.5rem;
+        margin-bottom: 0.8rem;
+      }
+
+      .blog-post-body p {
+        margin-bottom: 1.2rem;
+      }
+
+      .blog-post-body img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+        margin: 2rem 0;
+      }
+
+      .blog-post-body a {
+        color: #4a9eff;
+        text-decoration: underline;
+      }
+
+      .blog-post-body a:hover {
+        color: #6bb3ff;
+      }
+
+      .blog-post-body pre,
+      .blog-post-body code {
+        background: rgba(0, 0, 0, 0.3);
+        padding: 2px 6px;
+        border-radius: 4px;
+        font-family: "Courier New", monospace;
+      }
+
+      .blog-post-body pre {
+        padding: 1rem;
+        overflow-x: auto;
+        margin: 1.5rem 0;
+      }
+
+      .blog-post-body ul,
+      .blog-post-body ol {
+        margin-left: 2rem;
+        margin-bottom: 1.2rem;
+      }
+
+      .blog-post-body li {
+        margin-bottom: 0.5rem;
+      }
+
+      .blog-post-body blockquote {
+        border-left: 4px solid rgba(255, 255, 255, 0.3);
+        padding-left: 1.5rem;
+        margin: 1.5rem 0;
+        font-style: italic;
+        color: rgba(255, 255, 255, 0.8);
+      }
+
+      .blog-post-footer {
+        margin-top: 3rem;
+        padding-top: 2rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .medium-link {
+        color: #4a9eff;
+        text-decoration: none;
+        font-weight: 600;
+      }
+
+      .medium-link:hover {
+        text-decoration: underline;
+      }
+
+      @media (max-width: 768px) {
+        .blog-post-page {
+          padding: 60px 15px 30px;
+        }
+
+        .blog-post-content {
+          padding: 20px;
+        }
+
+        h1 {
+          font-size: 1.8rem;
+        }
+
+        .blog-post-body {
+          font-size: 1rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="blog-post-page">
+      <a href="/" class="back-link">
+        ← Back to Main Page
+      </a>
+
+      <article class="blog-post-content">
+        <img src="https://cdn-images-1.medium.com/max/1024/1*NFzpLWYccPaSyPLyfZvNEw.jpeg" alt="The Two Tools That Stopped Claude from Eating My Wallet (90% Savings, No Joke) - Article by Deepan Kumar" class="blog-post-hero" />
+
+        <div class="blog-post-meta">
+          <time datetime="2026-06-17 15:03:30">June 17, 2026</time>
+          
+          <div class="blog-post-categories">
+            <span class="category-tag">anthropic-claude</span><span class="category-tag">cost-optimization</span><span class="category-tag">claude-code</span><span class="category-tag">claude</span><span class="category-tag">token</span>
+          </div>
+          
+        </div>
+
+        <h1>The Two Tools That Stopped Claude from Eating My Wallet (90% Savings, No Joke)</h1>
+
+        <div class="blog-post-author">
+          <p>By Deepan Kumar</p>
+        </div>
+
+        <div class="blog-post-body">
+          
+<figure><img alt="" src="https://cdn-images-1.medium.com/max/1024/1*NFzpLWYccPaSyPLyfZvNEw.jpeg"></figure><p>I still remember the day I opened my Claude API bill and had to sit down.</p>
+<p><strong>$1,247.89.</strong> For <em>one month</em>. And that was <em>after</em> I thought I’d optimized my workflow. I was running Claude Code 12+ hours a day — PR reviews, code refactors, debugging sessions. I thought I was being efficient.</p>
+<p>Turns out, I was hemorrhaging tokens like a fire hose with no shutoff valve.</p>
+<p>Here’s the thing nobody tells you about AI coding assistants: <strong>they’re incredible… until they’re not</strong>. “Not” usually happens when you realize each git status call is dumping 2,000 tokens into your context window for no reason.</p>
+<p>That’s when I found RTK and Context Mode. Two tools that sound boring but are actually <strong>token assassins</strong>.</p>
+<h3>❌ What I Was Doing Wrong (And You Probably Are Too)</h3>
+<h3>Sin #1: Death by a Thousand cat Commands</h3>
+<p>Every time Claude needed to see a file, it would cat the entire thing. 50 lines? Sure. 500 lines? Why not. 5,000 lines of minified JSON? <em>Chef's kiss</em> of token waste.</p>
+<h3>Sin #2: The Git Status Spam</h3>
+<p>Running git status multiple times per conversation. Each time? Full output. Every. Single. File. 847 tokens of file paths I didn't need.</p>
+<h3>Sin #3: The Grep Avalanche</h3>
+<p>Searching for something in the codebase? Here are 4,000 lines of matches, most irrelevant. Enjoy your context flood.</p>
+<h3>Sin #4: Web Fetching Like It’s 1999</h3>
+<p>curl commands dumping entire HTML responses—ads, scripts, tracking pixels—straight into context. Beautiful.</p>
+<p><strong>The Result?</strong> By the time I discovered RTK, I’d burned through <strong>over $4,000</strong> in three months. That’s a used car. That’s rent in some cities. That’s a lot of coffee I didn’t buy because I was paying for AI to read git status 47 times a day.</p>
+<h3>🔪 Enter RTK: The Rust Token Killer</h3>
+<p>RTK stands for <strong>Rust Token Killer</strong>. Think of it as a smart filter that sits between Claude and your terminal commands — it intercepts common dev commands and returns only what matters.</p>
+<p>Instead of a wall of verbose git status output, you get:</p>
+<p>Modified: 43 files | Staged: 0 files | Untracked: 2 files</p>
+<p><strong>Tokens saved: ~800 per call</strong></p>
+<h3>The Hook That Changes Everything</h3>
+<p>RTK works through a Claude Code hook. Add this to your .claude/settings.json:</p>
+<p>{ "hooks": { "beforeToolUse": { "Bash": "rtk proxy $COMMAND" } } }</p>
+<p>Now every shell command Claude runs gets filtered through RTK automatically. <strong>Zero effort. Maximum savings.</strong></p>
+<h3>Real-World Numbers (My Actual Stats)</h3>
+<figure><img alt="" src="https://cdn-images-1.medium.com/max/1024/1*cQmY-b41ALHXhI4oAj4g3Q.png"></figure><p>Total commands: 16,122 | Input tokens: 1.52B | Tokens saved: <strong>1.04 billion (68.8%)</strong></p>
+<p>Yes. <strong>1.04 BILLION tokens saved.</strong> At $3–15 per million tokens, that’s <strong>$3,000–15,000 saved</strong> over 6 months.</p>
+<figure><img alt="" src="https://cdn-images-1.medium.com/max/1024/1*eO9oFuIkHLJoEIPZvvLYQQ.png"></figure><h3>🛡️ Context Mode: The Bouncer for Your Context Window</h3>
+<p>RTK handles command output. Context Mode handles <em>everything else</em>. It’s an MCP plugin that <strong>blocks context floods before they happen</strong>.</p>
+<p>It intercepts curl/wget calls (redirects to sandboxed fetch), large file reads over 500 lines (indexes + search), grep with 100+ results (summarizes), and web fetches (chunks and lets you query).</p>
+<h3>The Batch Execute Superpower</h3>
+<p>Instead of four separate terminal commands flooding your context, you batch them into a single indexed call. Tokens used: ~500 vs. 8,000+ the old way.</p>
+<h3>💰 The Real Numbers (My Bills, Exposed)</h3>
+<h3>Before — Dec 2025 to Feb 2026</h3>
+<p>December: $1,247.89 | January: $1,389.43 | February: $1,512.67 — Average: <strong>~$1,383/month</strong></p>
+<p>My manager started asking questions about our “tool budget.”</p>
+<h3>After — Mar to Jun 2026</h3>
+<p>March: $412.33 | April: $287.54 | May: $241.89 | June: $198.43 — Average: <strong>~$285/month</strong></p>
+<p>~79% savings. ~$13,176/year. That’s a car down payment. And I’m coding <em>more</em> now, not less. I just stopped paying for digital garbage.</p>
+<h3>🚀 How to Set This Up (10 Minutes)</h3>
+<p><strong>Step 1:</strong> brew install rtk or cargo install rtk<br>Run rtk gain to confirm the right package (naming collision with Rust Type Kit).</p>
+<p><strong>Step 2:</strong> Add the beforeToolUse Bash hook to ~/.claude/settings.json pointing to rtk proxy.</p>
+<p><strong>Step 3:</strong> npm install -g @context-mode/mcp and configure in Claude Code MCP settings.</p>
+<p><strong>Step 4:</strong> Run rtk gain after a week and watch the numbers climb.</p>
+<h3>🎯 When to Use What</h3>
+<p><strong>Reach for RTK</strong> on git commands, directory listings, test output, build logsanything Claude runs repeatedly.</p>
+<p><strong>Reach for Context Mode</strong> on web scraping, large file analysis, multi-command workflows, and big DB results.</p>
+<p><strong>Skip both</strong> for small file edits, single-line outputs, or commands you’re running manually.</p>
+<h3>🤔 The Surprising Side Effect</h3>
+<p>Beyond cost savings <strong>Claude got better at its job</strong>. With less noise in the context window, responses became more focused, faster, and more accurate. It’s like cleaning your desk before you work. Sure, you <em>can</em> work in chaos, but why?</p>
+<h3>🧠 The Meta Lesson</h3>
+<p>The best AI optimization isn’t about prompts. It’s about plumbing.</p>
+<p>Everyone obsesses over writing the perfect prompt. But if your infrastructure is spewing tokens like a broken fire hydrant, no amount of prompt engineering will save you. Fix the pipes first. Then worry about the faucets.</p>
+<h3>💡 Do These Three Things Today</h3>
+<p>1. <strong>Install RTK — </strong>5 minutes, instant savings<br>2. <strong>Add the Bash hook</strong> — one line in settings.json<br>3. <strong>Run </strong><strong>rtk gain after a week</strong> — watch the numbers and feel smug</p>
+<p>RTK alone saved me 68.8% across 16,000+ commands. That’s real money back in your pocket.</p>
+<h3>🎬 Final Thoughts</h3>
+<p>AI coding assistants are incredible tools. But they’re also incredibly expensive if you let them be. RTK and Context Mode aren’t magic, they’re smart defaults that should probably be built into Claude Code from day one, but aren’t yet.</p>
+<p>Until then: install these, save money, and buy coffee/beer with the difference.</p>
+<p>Your wallet will thank you.</p>
+<p><strong>Links</strong><br>RTK: <a href="https://github.com/rtk-ai/rtk">github.com/rtk-ai/rtk</a><br>Context Mode: <a href="https://github.com/mksglu/context-mode">github.com/mksglu/context-mode</a></p>
+<p><em>Have your own token-saving tricks? Drop them in the comments, let’s make AI coding affordable for everyone.</em></p>
+<p><strong>P.S.</strong> If this was useful, follow for more “I burned money so you don’t have to” content.</p>
+<p>Next up: MCP servers that actually save time!!</p>
+<img src="https://medium.com/_/stat?event=post.clientViewed&amp;referrerSource=full_rss&amp;postId=774cd88eee11" width="1" height="1" alt="">
+
+        </div>
+
+        <div class="blog-post-footer">
+          <p>
+            Read the full article on Medium:
+            <a href="https://medium.com/@deepan.ppgit/the-two-tools-that-stopped-claude-from-eating-my-wallet-90-savings-no-joke-774cd88eee11?source=rss-80461a0c324d------2" target="_blank" rel="noopener noreferrer" class="medium-link">
+              View on Medium →
+            </a>
+          </p>
+        </div>
+      </article>
+    </div>
+  </body>
+</html>

@@ -6,11 +6,9 @@ const About = () => {
       <div className="about-me">
         <h1 className="title">About Deepan Kumar - Principal Engineer & Technical Leader</h1>
         <p className="para">
-          I'm Deepan Kumar, a Principal Engineer at G2 and Peak Professional of the Year 2026, with over 10 years of
-          experience building scalable web applications and distributed systems. I specialize in React, TypeScript, Ruby on Rails,
-          and AWS cloud architecture, creating solutions that serve millions of users. As a RubyConf India 2025 speaker on
-          "AI at Runtime" and technical mentor, I'm passionate about sharing knowledge through conference talks, blog articles,
-          and building collaborative engineering teams.
+          I'm Deepan Kumar, a Principal Engineer at G2, with 12+ years building scalable web apps and distributed
+          systems in Ruby on Rails, React, TypeScript, and AWS. RubyConf India 2025
+          speaker on "AI at Runtime" and technical mentor, passionate about sharing knowledge through talks and writing.
         </p>
       </div>
     </div>

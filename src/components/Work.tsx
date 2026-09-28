@@ -106,14 +106,34 @@ const achievements: Achievement[] = [
 const Work = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [fullscreenImage, setFullscreenImage] = useState<string | null>(null);
+  const [radius, setRadius] = useState(750);
   const carouselRef = useRef<HTMLDivElement>(null);
+  const cellRef = useRef<HTMLDivElement>(null);
   const totalCards = achievements.length;
   const theta = 360 / totalCards;
-  const radius = 750;
 
   useEffect(() => {
-    rotateCarousel(0);
-  }, []);
+    const updateRadius = () => {
+      const cardWidth = cellRef.current?.offsetWidth ?? 650;
+      // Half-angle between adjacent cards; radius must clear half the card
+      // width at that angle (with a margin) so cards don't overlap.
+      const halfAngleRad = (Math.PI / totalCards);
+      const minRadius = (cardWidth / 2) / Math.tan(halfAngleRad);
+      setRadius(Math.round(minRadius * 1.15));
+    };
+
+    updateRadius();
+    window.addEventListener("resize", updateRadius);
+    return () => window.removeEventListener("resize", updateRadius);
+  }, [totalCards]);
+
+  useEffect(() => {
+    if (carouselRef.current) {
+      carouselRef.current.style.transform = `translateZ(-${radius}px)`;
+    }
+    rotateCarousel(currentIndex);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [radius]);
 
   useEffect(() => {
     console.log("Fullscreen image state changed:", fullscreenImage);
@@ -157,6 +177,7 @@ const Work = () => {
                 return (
                   <div
                     key={index}
+                    ref={index === 0 ? cellRef : undefined}
                     className="carousel-cell"
                     style={{
                       transform: `rotateY(${angleZ}deg) translateZ(${radius}px)`

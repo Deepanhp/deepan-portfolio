@@ -26,3 +26,6 @@ dist-ssr
 
 backup/
 .env
+.vercel
+.playwright-mcp/
+carousel-check*.png

@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Primary Meta Tags -->
+    <title>The Ralph Loop: When Claude Refuses to Stop After the First Try - Deepan Kumar's Blog</title>
+    <meta name="title" content="The Ralph Loop: When Claude Refuses to Stop After the First Try - Deepan Kumar's Blog" />
+    <meta name="description" content="
+Most AI coding tools follow a pretty simple pattern:
+You ask for code.
+They generate code.
+They stop.
+Whether the code actually works… is your next problem.
+Re" />
+    <meta name="keywords" content="ai, ralph-loop, productivity, claude-code, Deepan Kumar, Software Engineering, Blog" />
+    <meta name="author" content="Deepan Kumar" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://www.deepankumar.com/blog/the-ralph-loop-when-claude-refuses-to-stop-after-the-first-try.html" />
+    <meta property="og:title" content="The Ralph Loop: When Claude Refuses to Stop After the First Try" />
+    <meta property="og:description" content="
+Most AI coding tools follow a pretty simple pattern:
+You ask for code.
+They generate code.
+They stop.
+Whether the code actually works… is your next problem.
+Re" />
+    <meta property="og:image" content="https://cdn-images-1.medium.com/max/1024/1*8t-52I-JYWBDHi22QXvmjw.png" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://www.deepankumar.com/blog/the-ralph-loop-when-claude-refuses-to-stop-after-the-first-try.html" />
+    <meta property="twitter:title" content="The Ralph Loop: When Claude Refuses to Stop After the First Try" />
+    <meta property="twitter:description" content="
+Most AI coding tools follow a pretty simple pattern:
+You ask for code.
+They generate code.
+They stop.
+Whether the code actually works… is your next problem.
+Re" />
+    <meta property="twitter:image" content="https://cdn-images-1.medium.com/max/1024/1*8t-52I-JYWBDHi22QXvmjw.png" />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.deepankumar.com/blog/the-ralph-loop-when-claude-refuses-to-stop-after-the-first-try.html" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/images/logo.png" />
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "The Ralph Loop: When Claude Refuses to Stop After the First Try",
+      "description": "
+Most AI coding tools follow a pretty simple pattern:
+You ask for code.
+They generate code.
+They stop.
+Whether the code actually works… is your next problem.
+Re",
+      "image": "https://cdn-images-1.medium.com/max/1024/1*8t-52I-JYWBDHi22QXvmjw.png",
+      "author": {
+        "@type": "Person",
+        "name": "Deepan Kumar",
+        "url": "https://www.deepankumar.com",
+        "jobTitle": "Staff Engineer",
+        "worksFor": {
+          "@type": "Organization",
+          "name": "G2"
+        }
+      },
+      "publisher": {
+        "@type": "Person",
+        "name": "Deepan Kumar"
+      },
+      "datePublished": "2026-03-13 07:11:37",
+      "url": "https://www.deepankumar.com/blog/the-ralph-loop-when-claude-refuses-to-stop-after-the-first-try.html",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://www.deepankumar.com/blog/the-ralph-loop-when-claude-refuses-to-stop-after-the-first-try.html"
+      },
+      "keywords": "ai, ralph-loop, productivity, claude-code"
+    }
+    </script>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+        background: #000;
+        color: #fff;
+        line-height: 1.6;
+        min-height: 100vh;
+      }
+
+      .blog-post-page {
+        padding: 80px 20px 40px;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .back-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        color: #fff;
+        text-decoration: none;
+        font-size: 1rem;
+        margin-bottom: 2rem;
+        padding: 8px 16px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 4px;
+        transition: all 0.3s ease;
+      }
+
+      .back-link:hover {
+        background: rgba(255, 255, 255, 0.1);
+        border-color: rgba(255, 255, 255, 0.4);
+      }
+
+      .blog-post-content {
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 12px;
+        padding: 40px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .blog-post-hero {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+        margin-bottom: 2rem;
+      }
+
+      .blog-post-meta {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        margin-bottom: 1.5rem;
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 0.9rem;
+        flex-wrap: wrap;
+      }
+
+      .blog-post-categories {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+
+      .category-tag {
+        padding: 4px 12px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 4px;
+        font-size: 0.85rem;
+      }
+
+      h1 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        line-height: 1.2;
+      }
+
+      .blog-post-author {
+        margin-bottom: 2rem;
+        padding-bottom: 2rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        color: rgba(255, 255, 255, 0.8);
+      }
+
+      .blog-post-body {
+        line-height: 1.8;
+        font-size: 1.1rem;
+      }
+
+      .blog-post-body h2 {
+        font-size: 1.8rem;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+      }
+
+      .blog-post-body h3 {
+        font-size: 1.4rem;
+        margin-top: 1.5rem;
+        margin-bottom: 0.8rem;
+      }
+
+      .blog-post-body p {
+        margin-bottom: 1.2rem;
+      }
+
+      .blog-post-body img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+        margin: 2rem 0;
+      }
+
+      .blog-post-body a {
+        color: #4a9eff;
+        text-decoration: underline;
+      }
+
+      .blog-post-body a:hover {
+        color: #6bb3ff;
+      }
+
+      .blog-post-body pre,
+      .blog-post-body code {
+        background: rgba(0, 0, 0, 0.3);
+        padding: 2px 6px;
+        border-radius: 4px;
+        font-family: "Courier New", monospace;
+      }
+
+      .blog-post-body pre {
+        padding: 1rem;
+        overflow-x: auto;
+        margin: 1.5rem 0;
+      }
+
+      .blog-post-body ul,
+      .blog-post-body ol {
+        margin-left: 2rem;
+        margin-bottom: 1.2rem;
+      }
+
+      .blog-post-body li {
+        margin-bottom: 0.5rem;
+      }
+
+      .blog-post-body blockquote {
+        border-left: 4px solid rgba(255, 255, 255, 0.3);
+        padding-left: 1.5rem;
+        margin: 1.5rem 0;
+        font-style: italic;
+        color: rgba(255, 255, 255, 0.8);
+      }
+
+      .blog-post-footer {
+        margin-top: 3rem;
+        padding-top: 2rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .medium-link {
+        color: #4a9eff;
+        text-decoration: none;
+        font-weight: 600;
+      }
+
+      .medium-link:hover {
+        text-decoration: underline;
+      }
+
+      @media (max-width: 768px) {
+        .blog-post-page {
+          padding: 60px 15px 30px;
+        }
+
+        .blog-post-content {
+          padding: 20px;
+        }
+
+        h1 {
+          font-size: 1.8rem;
+        }
+
+        .blog-post-body {
+          font-size: 1rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="blog-post-page">
+      <a href="/" class="back-link">
+        ← Back to Main Page
+      </a>
+
+      <article class="blog-post-content">
+        <img src="https://cdn-images-1.medium.com/max/1024/1*8t-52I-JYWBDHi22QXvmjw.png" alt="The Ralph Loop: When Claude Refuses to Stop After the First Try - Article by Deepan Kumar" class="blog-post-hero" />
+
+        <div class="blog-post-meta">
+          <time datetime="2026-03-13 07:11:37">March 13, 2026</time>
+          
+          <div class="blog-post-categories">
+            <span class="category-tag">ai</span><span class="category-tag">ralph-loop</span><span class="category-tag">productivity</span><span class="category-tag">claude-code</span>
+          </div>
+          
+        </div>
+
+        <h1>The Ralph Loop: When Claude Refuses to Stop After the First Try</h1>
+
+        <div class="blog-post-author">
+          <p>By Deepan Kumar</p>
+        </div>
+
+        <div class="blog-post-body">
+          
+<figure><img alt="" src="https://cdn-images-1.medium.com/max/1024/1*8t-52I-JYWBDHi22QXvmjw.png"></figure><p>Most AI coding tools follow a pretty simple pattern:</p>
+<p>You ask for code.</p>
+<p>They generate code.</p>
+<p>They stop.</p>
+<p>Whether the code actually works… is your next problem.</p>
+<p>Recently while exploring Claude tooling, I came across something interesting: <strong>the Ralph Loop plugin</strong>, available in the Claude Marketplace.</p>
+<p>At first glance it sounds like just another plugin. But the idea behind it is actually pretty powerful.</p>
+<h3>The Idea Behind the Ralph Loop</h3>
+<p>Normally AI behaves like a <strong>one-shot generator</strong>.</p>
+<p>You ask → it answers → done.</p>
+<p>The Ralph Loop changes that behavior by introducing an <strong>iteration cycle</strong>:</p>
+<pre>write → run → inspect → fix → repeat</pre>
+<p>Instead of producing code once, Claude keeps iterating until the task stabilizes.</p>
+<p>Think of it as teaching the AI the most developer-like habit possible:</p>
+<p><strong>“Try again.”</strong></p>
+<h3>The Technical Knobs</h3>
+<p>Since Ralph Loop is a plugin, you can configure a few useful things:</p>
+<p>• Install it directly from the <strong>Claude Marketplace</strong></p>
+<p>• Define <strong>max iterations</strong> (for example 5–10 retries)</p>
+<p>• Specify commands Claude should run (tests, lint, build etc.)</p>
+<p>• Define the condition that signals success</p>
+<p>So you can essentially tell Claude:</p>
+<blockquote><em>“Keep working on this task until tests pass or you hit 8 iterations.”</em></blockquote>
+<p>Which means the AI can debug its own output before handing it back.</p>
+<h3>Where It Gets Really Interesting</h3>
+<p>Things get much more fun when you combine Ralph Loop with <strong>MCP tools</strong>.</p>
+<p>For example:</p>
+<ul>
+<li>
+<strong>Figma MCP</strong> → Claude can fetch design specs directly from Figma</li>
+<li>
+<strong>Playwright MCP</strong> → Claude can render the UI and inspect it</li>
+</ul>
+<p>Now imagine asking Claude to do this:</p>
+<blockquote><em>“Fetch the design from Figma, implement the component, render it, compare with the design, and fix differences.”</em></blockquote>
+<p>The loop could look like this:</p>
+<pre>Fetch design from Figma<br>↓<br>Implement component<br>↓<br>Render with Playwright<br>↓<br>Compare with design<br>↓<br>Fix mismatches<br>↓<br>Repeat</pre>
+<p>So Claude isn’t just generating UI code — it’s <strong>checking whether the UI actually matches the design</strong>.</p>
+<h3>Why This Matters</h3>
+<p>UI implementation today usually involves a familiar loop:</p>
+<p>Designer → Dev → Screenshot</p>
+<p>“Spacing is off” → Dev</p>
+<p>“Font slightly wrong” → Dev</p>
+<p>“Button alignment still off” → Dev</p>
+<p>With something like the Ralph Loop, Claude can <strong>iterate on the implementation until it visually matches the design</strong>.</p>
+<p>Less back-and-forth. More convergence.</p>
+<h3>The Bigger Shift</h3>
+<p>The Ralph Loop may sound like a small plugin, but it reflects a larger shift in how AI development tools are evolving.</p>
+<p>AI is moving from:</p>
+<p><strong>Answer generators</strong></p>
+<p>to</p>
+<p><strong>Iterative problem solvers.</strong></p>
+<p>Instead of stopping at “here’s some code”, the tool keeps working until the result actually holds up.</p>
+<p>Which is basically how developers have always worked — just now the AI is joining the loop ∞</p>
+<img src="https://medium.com/_/stat?event=post.clientViewed&amp;referrerSource=full_rss&amp;postId=28a2cd130d99" width="1" height="1" alt="">
+
+        </div>
+
+        <div class="blog-post-footer">
+          <p>
+            Read the full article on Medium:
+            <a href="https://medium.com/@deepan.ppgit/the-ralph-loop-when-claude-refuses-to-stop-after-the-first-try-28a2cd130d99?source=rss-80461a0c324d------2" target="_blank" rel="noopener noreferrer" class="medium-link">
+              View on Medium →
+            </a>
+          </p>
+        </div>
+      </article>
+    </div>
+  </body>
+</html>

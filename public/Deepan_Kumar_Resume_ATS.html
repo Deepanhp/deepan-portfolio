@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Deepan Kumar A – Principal Engineer Resume</title>
+  <style>
+    @page {
+      size: Letter;
+      /* Remove Chrome's default header/footer (timestamp, URL, page number) */
+      margin: 0.6in 0.65in 0.6in 0.65in;
+      @top-center { content: none; }
+      @bottom-center { content: none; }
+    }
+
+    @media print {
+      body { font-size: 10.5pt; }
+      .no-print { display: none !important; }
+
+      /* ── Page-break hygiene ── */
+      /* Keep whole section together where possible; fall back gracefully */
+      section { break-inside: avoid; page-break-inside: avoid; }
+
+      /* Never break immediately after a section heading */
+      h2 {
+        break-after: avoid;
+        page-break-after: avoid;
+      }
+
+      /* Keep each job block together; if it must break, break before it */
+      .job {
+        break-inside: avoid;
+        page-break-inside: avoid;
+        break-before: auto;
+      }
+
+      /* Job title + company stay glued to first bullet */
+      .job-header, .job-company {
+        break-after: avoid;
+        page-break-after: avoid;
+      }
+
+      /* Education / cert entries stay together */
+      .edu-entry, .cert-list li {
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+
+      /* Orphan / widow control on list items */
+      li {
+        orphans: 2;
+        widows: 2;
+      }
+
+      /* Paragraphs (summary) shouldn't orphan a single line */
+      p {
+        orphans: 3;
+        widows: 3;
+      }
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Calibri', 'Segoe UI', Arial, sans-serif;
+      font-size: 10.5pt;
+      line-height: 1.45;
+      color: #111;
+      background: #fff;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 32px 40px;
+    }
+
+    a { color: #111; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .no-print {
+      text-align: center;
+      margin-bottom: 24px;
+    }
+
+    .no-print button {
+      background: #1a1a2e;
+      color: #fff;
+      border: none;
+      padding: 10px 28px;
+      border-radius: 6px;
+      font-size: 14px;
+      cursor: pointer;
+      letter-spacing: 0.5px;
+    }
+
+    .no-print button:hover { background: #16213e; }
+
+    header {
+      text-align: center;
+      margin-bottom: 14px;
+      border-bottom: 2px solid #111;
+      padding-bottom: 12px;
+    }
+
+    header h1 {
+      font-size: 22pt;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+
+    .tagline {
+      font-size: 11pt;
+      font-weight: 600;
+      color: #333;
+      margin-bottom: 8px;
+    }
+
+    .contact-line {
+      font-size: 9.5pt;
+      color: #222;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 6px 16px;
+    }
+
+    .contact-line span::before { content: '•'; margin-right: 6px; color: #555; }
+    .contact-line span:first-child::before { content: ''; margin-right: 0; }
+
+    section { margin-bottom: 14px; }
+
+    h2 {
+      font-size: 11pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      border-bottom: 1.5px solid #111;
+      padding-bottom: 3px;
+      margin-bottom: 8px;
+    }
+
+    .summary p {
+      font-size: 10.5pt;
+      line-height: 1.5;
+      text-align: justify;
+    }
+
+    .skill-row {
+      display: flex;
+      gap: 4px;
+      margin-bottom: 4px;
+      font-size: 10pt;
+    }
+
+    .skill-label { font-weight: 700; min-width: 230px; flex-shrink: 0; }
+
+    /* Key Achievements section */
+    .achievements-list {
+      list-style: none;
+      padding: 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5px 24px;
+    }
+
+    .achievements-list li {
+      font-size: 10pt;
+      line-height: 1.45;
+      padding-left: 14px;
+      position: relative;
+    }
+
+    .achievements-list li::before {
+      content: '▶';
+      position: absolute;
+      left: 0;
+      font-size: 7pt;
+      top: 3px;
+      color: #333;
+    }
+
+    .job { margin-bottom: 12px; }
+
+    .job-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+    }
+
+    .job-title { font-size: 11pt; font-weight: 700; }
+    .job-dates { font-size: 10pt; color: #333; white-space: nowrap; }
+
+    .job-company {
+      font-size: 10pt;
+      font-style: italic;
+      color: #222;
+      margin-bottom: 5px;
+    }
+
+    .job ul { padding-left: 16px; }
+    .job ul li { font-size: 10pt; line-height: 1.45; margin-bottom: 3px; }
+
+    .edu-entry {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+    }
+
+    .edu-degree { font-weight: 700; font-size: 10.5pt; }
+    .edu-school { font-size: 10pt; font-style: italic; color: #333; }
+    .edu-dates { font-size: 10pt; color: #333; white-space: nowrap; }
+
+    .cert-list { list-style: disc; padding-left: 16px; }
+    .cert-list li { font-size: 10pt; line-height: 1.5; margin-bottom: 4px; }
+
+    .lang-row { font-size: 10pt; }
+
+    @media screen {
+      body {
+        box-shadow: 0 2px 24px rgba(0,0,0,0.12);
+        margin: 32px auto;
+        border-radius: 4px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="no-print">
+    <button onclick="window.print()">⬇ Download / Print as PDF</button>
+  </div>
+
+  <header>
+    <h1>Deepan Kumar A</h1>
+    <div class="tagline">Principal Engineer &nbsp;|&nbsp; Software Architecture &nbsp;|&nbsp; AI-Assisted Engineering</div>
+    <div class="contact-line">
+      <span>Bengaluru, Karnataka, India</span>
+      <span>+91 8072286708</span>
+      <span><a href="mailto:deepan.ppgit@gmail.com">deepan.ppgit@gmail.com</a></span>
+      <span><a href="https://linkedin.com/in/deepankumar-dev">linkedin.com/in/deepankumar-dev</a></span>
+      <span><a href="https://deepankumar.com">deepankumar.com</a></span>
+      <span><a href="https://medium.com/@deepan.ppgit">medium.com/@deepan.ppgit</a></span>
+    </div>
+  </header>
+
+  <section class="summary">
+    <h2>Professional Summary</h2>
+    <p>
+      Accomplished Principal Engineer at G2 with over a decade of experience architecting scalable,
+      data-driven software systems serving millions of users worldwide. Deep expertise in microservices
+      architecture, Ruby on Rails, and AI-assisted engineering workflows, with a proven track record of
+      translating complex business requirements into resilient technical strategy. Promoted from Staff Engineer
+      to Principal Engineer while driving initiatives in AI-driven self-healing systems and agentic developer
+      tooling. Recognized as G2's PEAK Professional of the Year (2025) and Most Valuable Professional (2024).
+      RubyConf India 2025 speaker and active technical writer, committed to mentoring engineering teams and
+      staying at the forefront of emerging technology.
+    </p>
+  </section>
+
+  <section>
+    <h2>Core Competencies &amp; Technical Skills</h2>
+
+    <div class="skill-row">
+      <span class="skill-label">Languages &amp; Frameworks:</span>
+      <span>Ruby on Rails, Hotwire (Turbo, Stimulus.js), Python, Go, JavaScript</span>
+    </div>
+    <div class="skill-row">
+      <span class="skill-label">AI &amp; Agentic Systems:</span>
+      <span>LLM integration (multi-provider routing, cost/budget governance), agentic workflow design, multi-agent orchestration, Claude Code, MCP, custom AI tooling for code review / test triage / CI remediation</span>
+    </div>
+    <div class="skill-row">
+      <span class="skill-label">Architecture &amp; Design:</span>
+      <span>Microservices architecture, API design, event-driven systems (Kafka), RESTful APIs, system scalability &amp; reliability</span>
+    </div>
+    <div class="skill-row">
+      <span class="skill-label">Databases:</span>
+      <span>MySQL, PostgreSQL, MongoDB — query optimization, schema design, caching &amp; shared-resolver patterns</span>
+    </div>
+    <div class="skill-row">
+      <span class="skill-label">Cloud &amp; DevOps:</span>
+      <span>AWS, Docker, CI/CD pipelines</span>
+    </div>
+    <div class="skill-row">
+      <span class="skill-label">Testing &amp; Quality:</span>
+      <span>RSpec, Storybook, component architecture, code review practices</span>
+    </div>
+    <div class="skill-row">
+      <span class="skill-label">Third-Party Integrations:</span>
+      <span>HubSpot, Salesloft, Clearbit, payment gateways, external API contracts</span>
+    </div>
+    <div class="skill-row">
+      <span class="skill-label">Leadership &amp; Analytics:</span>
+      <span>Technical strategy, engineering mentorship, cross-functional collaboration, product analytics, event instrumentation &amp; funnel analysis</span>
+    </div>
+    <div class="skill-row">
+      <span class="skill-label">Performance Engineering:</span>
+      <span>Database query optimization, N+1 elimination, shared-resolver &amp; caching patterns, reducing redundant cross-service calls, profiling &amp; bottleneck analysis</span>
+    </div>
+    <div class="skill-row">
+      <span class="skill-label">Production Reliability:</span>
+      <span>Race condition &amp; concurrency remediation, defensive coding at scale, incident response, observability, production monitoring &amp; alerting</span>
+    </div>
+    <div class="skill-row">
+      <span class="skill-label">Developer Experience &amp; Tooling:</span>
+      <span>Custom CI/CD automation, automated test triage, code review workflows, PR bot integrations, developer onboarding &amp; standards documentation</span>
+    </div>
+  </section>
+
+  <section>
+    <h2>Key Achievements</h2>
+    <ul class="achievements-list">
+      <li>Promoted <strong>Staff → Principal Engineer</strong> at G2, one of the fastest engineering tracks in the org</li>
+      <li>Named <strong>PEAK Professional of the Year 2025</strong> &amp; <strong>MVP 2024</strong> at G2 for cross-org technical impact</li>
+      <li>Automated ServiceNow workflows at HPE — <strong>eliminated 6 FTEs</strong> worth of manual operational effort</li>
+      <li>Architected features reaching <strong>330,000+ global users</strong> (myBataz) and <strong>23,000+ users</strong> (MEDICI)</li>
+      <li>Mentored <strong>30+ junior engineers</strong> on architecture &amp; best practices across Rently teams</li>
+      <li>Speaker at <strong>RubyConf India 2025</strong>; active technical blogger on Medium; <strong>Claude Certified Architect</strong> (Anthropic, 2026)</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Work Experience</h2>
+
+    <div class="job">
+      <div class="job-header">
+        <span class="job-title">Principal Engineer</span>
+        <span class="job-dates">Apr 2026 – Present</span>
+      </div>
+      <div class="job-company">G2 &nbsp;·&nbsp; Bengaluru, India</div>
+      <ul>
+        <li>Promoted to Principal Engineer to lead technical strategy and architecture direction across G2's core platform serving millions of users worldwide.</li>
+        <li>Driving adoption of AI-driven engineering practices, including agentic developer workflows and self-healing systems.</li>
+        <li>Setting technical vision for microservices architecture and platform scalability initiatives.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-header">
+        <span class="job-title">Staff Engineer</span>
+        <span class="job-dates">Jun 2024 – Apr 2026</span>
+      </div>
+      <div class="job-company">G2 &nbsp;·&nbsp; Bengaluru, India</div>
+      <ul>
+        <li>Led design and development of scalable, data-driven solutions serving millions of users, providing technical leadership across microservices architecture.</li>
+        <li>Named G2 <strong>PEAK Professional of the Year (2025)</strong> and awarded <strong>Most Valuable Professional (MVP) 2024</strong> for outstanding technical contributions.</li>
+        <li>Won 3rd place in G2 Hackathon FY25 for innovative problem-solving and prototyping.</li>
+        <li>Led technical initiatives in AI-driven self-healing applications, reducing operational toil and improving system reliability.</li>
+        <li>Mentored engineering teams on system architecture, code quality, and engineering best practices.</li>
+        <li>Spoke at <strong>RubyConf India 2025</strong> on modern Ruby on Rails architecture.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-header">
+        <span class="job-title">Associate Software Architect</span>
+        <span class="job-dates">Apr 2023 – Jun 2024</span>
+      </div>
+      <div class="job-company">Rently &nbsp;·&nbsp; Coimbatore, India</div>
+      <ul>
+        <li>Developed robust, scalable software architectures that reduced maintenance costs and improved system stability across cloud services.</li>
+        <li>Enhanced software performance by <strong>10%</strong> through in-depth bottleneck analysis and targeted code optimization.</li>
+        <li>Mentored <strong>30+ junior developers</strong> on architecture design and coding best practices.</li>
+        <li>Optimized database structures, improving query performance and end-user response times.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-header">
+        <span class="job-title">Technical Lead</span>
+        <span class="job-dates">Jul 2020 – Apr 2023</span>
+      </div>
+      <div class="job-company">Rently &nbsp;·&nbsp; Coimbatore, India</div>
+      <ul>
+        <li>Led <strong>15+ development teams</strong>, ensuring application security, scalability, and production stability.</li>
+        <li>Owned end-to-end delivery of innovative, high-performance features across software applications.</li>
+        <li>Set technical direction for clearing tech debt, including technology, tooling, and infrastructure modernization.</li>
+        <li>Facilitated knowledge-sharing sessions to raise team skill levels and drive innovative solutions.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-header">
+        <span class="job-title">Senior Backend Developer</span>
+        <span class="job-dates">Mar 2019 – Jul 2020</span>
+      </div>
+      <div class="job-company">MEDICI &nbsp;·&nbsp; Bengaluru, India</div>
+      <ul>
+        <li>Built and deployed <strong>3 Ruby on Rails applications</strong> from scratch in a cloud environment.</li>
+        <li>Integrated payment gateway and third-party services for a platform serving <strong>23,000+ users</strong>.</li>
+        <li>Owned product features end-to-end from design through implementation; led code reviews to maintain team quality standards.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-header">
+        <span class="job-title">Lead Backend Developer</span>
+        <span class="job-dates">May 2018 – Mar 2019</span>
+      </div>
+      <div class="job-company">myBataz &nbsp;·&nbsp; Bengaluru, India</div>
+      <ul>
+        <li>Revamped backend architecture of the Ruby on Rails application applying the open-closed principle for long-term maintainability.</li>
+        <li>Spearheaded RESTful APIs for web and mobile clients across <strong>25+ features</strong>.</li>
+        <li>Delivered ecommerce, Bataz Finder, and Digital Fashion Show features reaching <strong>330,000+ users globally</strong>.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-header">
+        <span class="job-title">Software Developer</span>
+        <span class="job-dates">Oct 2015 – May 2018</span>
+      </div>
+      <div class="job-company">Hewlett Packard Enterprise &nbsp;·&nbsp; Bengaluru, India</div>
+      <ul>
+        <li>Led automation of ServiceNow ticketing workflows, <strong>eliminating manual effort equivalent to 6 FTEs</strong> in operational processes.</li>
+        <li>Pioneered a comprehensive automation initiative reducing manual intervention across the ServiceNow ticketing tool.</li>
+        <li>Collaborated with lead developers to define full front-end and back-end architecture for the automation system.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Education</h2>
+    <div class="edu-entry">
+      <div class="edu-left">
+        <div class="edu-degree">Bachelor of Technology – Information Technology</div>
+        <div class="edu-school">PPG Institute of Technology, Coimbatore</div>
+      </div>
+      <div class="edu-dates">2011 – 2015</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Certifications</h2>
+    <ul class="cert-list">
+      <li>
+        <strong>Claude Certified Architect – Foundations</strong>, Anthropic (2026)
+        &nbsp;—&nbsp; <a href="https://credly.com/badges/6d244dbb-6ef2-45aa-b346-439c30735010">Verify on Credly</a>
+      </li>
+      <li>
+        <strong>Certified in Java 2 Standard Edition (J2SE) and Java 2 Enterprise Edition (J2EE)</strong>
+      </li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Languages</h2>
+    <div class="lang-row">Tamil (Native) &nbsp;·&nbsp; English (Professional) &nbsp;·&nbsp; Kannada (Conversational) &nbsp;·&nbsp; Malayalam (Conversational)</div>
+  </section>
+
+</body>
+</html>

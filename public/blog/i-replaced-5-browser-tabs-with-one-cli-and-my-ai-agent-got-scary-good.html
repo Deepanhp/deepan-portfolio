@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Primary Meta Tags -->
+    <title>I Replaced 5 Browser Tabs With One CLI and My AI Agent Got Scary Good - Deepan Kumar's Blog</title>
+    <meta name="title" content="I Replaced 5 Browser Tabs With One CLI and My AI Agent Got Scary Good - Deepan Kumar's Blog" />
+    <meta name="description" content="
+Let me set the scene: I’m debugging something mundane, ask Claude “hey, what’s blocking this ticket” and instead of the usual shrug — “I don’t have access to y" />
+    <meta name="keywords" content="ai, atlassian, mcp-server, twg, ai-agent, Deepan Kumar, Software Engineering, Blog" />
+    <meta name="author" content="Deepan Kumar" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://www.deepankumar.com/blog/i-replaced-5-browser-tabs-with-one-cli-and-my-ai-agent-got-scary-good.html" />
+    <meta property="og:title" content="I Replaced 5 Browser Tabs With One CLI and My AI Agent Got Scary Good" />
+    <meta property="og:description" content="
+Let me set the scene: I’m debugging something mundane, ask Claude “hey, what’s blocking this ticket” and instead of the usual shrug — “I don’t have access to y" />
+    <meta property="og:image" content="https://cdn-images-1.medium.com/max/1024/1*2fcEbjBlt2VuH3BlNOtXng.png" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://www.deepankumar.com/blog/i-replaced-5-browser-tabs-with-one-cli-and-my-ai-agent-got-scary-good.html" />
+    <meta property="twitter:title" content="I Replaced 5 Browser Tabs With One CLI and My AI Agent Got Scary Good" />
+    <meta property="twitter:description" content="
+Let me set the scene: I’m debugging something mundane, ask Claude “hey, what’s blocking this ticket” and instead of the usual shrug — “I don’t have access to y" />
+    <meta property="twitter:image" content="https://cdn-images-1.medium.com/max/1024/1*2fcEbjBlt2VuH3BlNOtXng.png" />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.deepankumar.com/blog/i-replaced-5-browser-tabs-with-one-cli-and-my-ai-agent-got-scary-good.html" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/images/logo.png" />
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "I Replaced 5 Browser Tabs With One CLI and My AI Agent Got Scary Good",
+      "description": "
+Let me set the scene: I’m debugging something mundane, ask Claude “hey, what’s blocking this ticket” and instead of the usual shrug — “I don’t have access to y",
+      "image": "https://cdn-images-1.medium.com/max/1024/1*2fcEbjBlt2VuH3BlNOtXng.png",
+      "author": {
+        "@type": "Person",
+        "name": "Deepan Kumar",
+        "url": "https://www.deepankumar.com",
+        "jobTitle": "Staff Engineer",
+        "worksFor": {
+          "@type": "Organization",
+          "name": "G2"
+        }
+      },
+      "publisher": {
+        "@type": "Person",
+        "name": "Deepan Kumar"
+      },
+      "datePublished": "2026-08-25 06:10:28",
+      "url": "https://www.deepankumar.com/blog/i-replaced-5-browser-tabs-with-one-cli-and-my-ai-agent-got-scary-good.html",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://www.deepankumar.com/blog/i-replaced-5-browser-tabs-with-one-cli-and-my-ai-agent-got-scary-good.html"
+      },
+      "keywords": "ai, atlassian, mcp-server, twg, ai-agent"
+    }
+    </script>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+        background: #000;
+        color: #fff;
+        line-height: 1.6;
+        min-height: 100vh;
+      }
+
+      .blog-post-page {
+        padding: 80px 20px 40px;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .back-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        color: #fff;
+        text-decoration: none;
+        font-size: 1rem;
+        margin-bottom: 2rem;
+        padding: 8px 16px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 4px;
+        transition: all 0.3s ease;
+      }
+
+      .back-link:hover {
+        background: rgba(255, 255, 255, 0.1);
+        border-color: rgba(255, 255, 255, 0.4);
+      }
+
+      .blog-post-content {
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 12px;
+        padding: 40px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .blog-post-hero {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+        margin-bottom: 2rem;
+      }
+
+      .blog-post-meta {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        margin-bottom: 1.5rem;
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 0.9rem;
+        flex-wrap: wrap;
+      }
+
+      .blog-post-categories {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+
+      .category-tag {
+        padding: 4px 12px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 4px;
+        font-size: 0.85rem;
+      }
+
+      h1 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        line-height: 1.2;
+      }
+
+      .blog-post-author {
+        margin-bottom: 2rem;
+        padding-bottom: 2rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        color: rgba(255, 255, 255, 0.8);
+      }
+
+      .blog-post-body {
+        line-height: 1.8;
+        font-size: 1.1rem;
+      }
+
+      .blog-post-body h2 {
+        font-size: 1.8rem;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+      }
+
+      .blog-post-body h3 {
+        font-size: 1.4rem;
+        margin-top: 1.5rem;
+        margin-bottom: 0.8rem;
+      }
+
+      .blog-post-body p {
+        margin-bottom: 1.2rem;
+      }
+
+      .blog-post-body img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+        margin: 2rem 0;
+      }
+
+      .blog-post-body a {
+        color: #4a9eff;
+        text-decoration: underline;
+      }
+
+      .blog-post-body a:hover {
+        color: #6bb3ff;
+      }
+
+      .blog-post-body pre,
+      .blog-post-body code {
+        background: rgba(0, 0, 0, 0.3);
+        padding: 2px 6px;
+        border-radius: 4px;
+        font-family: "Courier New", monospace;
+      }
+
+      .blog-post-body pre {
+        padding: 1rem;
+        overflow-x: auto;
+        margin: 1.5rem 0;
+      }
+
+      .blog-post-body ul,
+      .blog-post-body ol {
+        margin-left: 2rem;
+        margin-bottom: 1.2rem;
+      }
+
+      .blog-post-body li {
+        margin-bottom: 0.5rem;
+      }
+
+      .blog-post-body blockquote {
+        border-left: 4px solid rgba(255, 255, 255, 0.3);
+        padding-left: 1.5rem;
+        margin: 1.5rem 0;
+        font-style: italic;
+        color: rgba(255, 255, 255, 0.8);
+      }
+
+      .blog-post-footer {
+        margin-top: 3rem;
+        padding-top: 2rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .medium-link {
+        color: #4a9eff;
+        text-decoration: none;
+        font-weight: 600;
+      }
+
+      .medium-link:hover {
+        text-decoration: underline;
+      }
+
+      @media (max-width: 768px) {
+        .blog-post-page {
+          padding: 60px 15px 30px;
+        }
+
+        .blog-post-content {
+          padding: 20px;
+        }
+
+        h1 {
+          font-size: 1.8rem;
+        }
+
+        .blog-post-body {
+          font-size: 1rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="blog-post-page">
+      <a href="/" class="back-link">
+        ← Back to Main Page
+      </a>
+
+      <article class="blog-post-content">
+        <img src="https://cdn-images-1.medium.com/max/1024/1*2fcEbjBlt2VuH3BlNOtXng.png" alt="I Replaced 5 Browser Tabs With One CLI and My AI Agent Got Scary Good - Article by Deepan Kumar" class="blog-post-hero" />
+
+        <div class="blog-post-meta">
+          <time datetime="2026-08-25 06:10:28">August 25, 2026</time>
+          
+          <div class="blog-post-categories">
+            <span class="category-tag">ai</span><span class="category-tag">atlassian</span><span class="category-tag">mcp-server</span><span class="category-tag">twg</span><span class="category-tag">ai-agent</span>
+          </div>
+          
+        </div>
+
+        <h1>I Replaced 5 Browser Tabs With One CLI and My AI Agent Got Scary Good</h1>
+
+        <div class="blog-post-author">
+          <p>By Deepan Kumar</p>
+        </div>
+
+        <div class="blog-post-body">
+          
+<p>Let me set the scene: I’m debugging something mundane, ask Claude “<em>hey, what’s blocking this ticket</em>” and instead of the usual shrug — “<em>I don’t have access to your Jira, can you paste the details?</em>” — it just… tells me. Linked PR, four commits, twenty CI runs, the parent epic, the sprint. Like it had been sitting in on every standup I’ve ever skipped.</p>
+<p>That’s <a href="https://teamworkgraph.com/cli?utm_source=jira&amp;utm_medium=cta&amp;utm_campaign=jira_side_nav_v2">TWG</a>. And I have complaints, compliments, and a mild identity crisis about what it means for how I work now.</p>
+<figure><img alt="" src="https://cdn-images-1.medium.com/max/1024/1*2fcEbjBlt2VuH3BlNOtXng.png"></figure><p>Okay, but what is it?</p>
+<p>TWG stands for <a href="https://teamworkgraph.com/cli?utm_source=jira&amp;utm_medium=cta&amp;utm_campaign=jira_side_nav_v2">TeamWork Graph</a>, which is a very serious name for a tool that is basically a nosy coworker who’s read every Jira ticket, every PR, every Confluence page, and every Slack thread in the company, and will happily gossip about the connections between them if you ask nicely.</p>
+<p>Technically, it’s a CLI that pre-joins Jira, Confluence, GitHub/Bitbucket, and Slack into one graph you can query. Practically: it’s the thing that lets an AI coding agent stop pretending it lives in a sealed room with only your git log for company.</p>
+<blockquote><strong>Isn’t this just the Atlassian MCP with a costume on?</strong></blockquote>
+<p>No, and this is the part everyone gets wrong on first glance.</p>
+<p>An MCP integration is a translator. You ask for a Jira ticket, it fetches a Jira ticket. You ask for a PR, it fetches a PR. Every question is a separate trip, and if your question actually spans three systems — “is this ticket done, and did the fix actually ship, and who reviewed it” — you’re the one holding four API responses together with narrative glue.</p>
+<p><a href="https://teamworkgraph.com/cli?utm_source=jira&amp;utm_medium=cta&amp;utm_campaign=jira_side_nav_v2">TWG</a> skips the glue. It already did the joining, ahead of time, so a single query returns the shape of the work, not just one flat fact about it:</p>
+<pre>$ twg context get SOME-TICKET<br><br>Code → linked PR, 4 commits, 20 CI runs<br>People → assignee<br>Delivery → parent epic, sprint, project</pre>
+<p>One call. No stitching. The MCP is a phone line to one office; TWG is the org chart, the seating map, and the group chat, already cross-referenced.</p>
+<h4>Here’s the plot twist nobody warns you about</h4>
+<p>Give a tool this much cross-system visibility and it will, without fail, immediately snitch on your organization’s data hygiene.</p>
+<p>Ask it for every ticket under a label your team’s been using for years, and there’s a real chance it comes back empty — not because the tickets don’t exist, but because someone typed the label as <em>DMIntegration</em> in 2023 and everyone since has been assuming it was <em>dm-integration</em> with a hyphen like a normal person. TWG doesn’t fix that. It just holds up a mirror and says “this is what you actually have,” which is somehow both incredibly useful and mildly enraging.</p>
+<p>Same story with status fields. A ticket marked “In Review” feels like it should have a PR attached. Sometimes it doesn’t — because “in review” meant a design doc, not code, and nobody updated the status. TWG won’t lie to make the ticket feel more finished than it is. It’ll just tell you: no PR exists. Which, annoyingly, is usually correct.</p>
+<p>The tool isn’t smarter than your process. It’s just the first thing that’s ever been honest about your process at this scale.</p>
+<blockquote><strong>Where it actually pays off for me + my agent</strong></blockquote>
+<p>I don’t run <a href="https://teamworkgraph.com/cli?utm_source=jira&amp;utm_medium=cta&amp;utm_campaign=jira_side_nav_v2">TWG</a> by hand most days — the AI agent does, mid-conversation, because a bunch of skills are wired to reach for it automatically. What that unlocks in practice:</p>
+<p>- <em>What’s blocking this ticket?</em> — one call returns the PR, builds, epic, sprint. No tab-switching.<br>- <em>“Is this actually shipped, or just marked done?” </em>— cross-checks the ticket against merged code, which catches the special kind of lie where a ticket says “Done” and the branch says otherwise.<br>- <em>“Catch me up on this while I was out”</em> — reconstructs what changed across systems without me reading three days of Slack.<br>- <em>“What’s actually on my plate?”</em> — a real rollup, not a vibes-based guess from memory.</p>
+<blockquote>The point isn’t that TWG is magic. It’s that it turns “let me go check four places and get back to you” into “here,” which is the entire difference between a tool that assists you and a tool that just adds more tabs.</blockquote>
+<p>The part where I tell you to actually try it</p>
+<p>If you want to poke at it directly instead of letting an agent do it for you:</p>
+<pre>twg whoami - sanity check that you're actually logged in<br>twg doctor - full health report on auth, connectors, everything<br>twg context get &lt;KEY&gt; - the whole graph for one ticket, PR, or doc, in one shot<br>twg jira workitem query '&lt;JQL&gt;' - for when fuzzy search is lying to you (it will, eventually)<br>twg rovo list-apps - see what's actually connected before you blame your permissions<br>twg work-tree / twg pr-tree - a rollup of what's yours right now</pre>
+<p>The actual takeaway</p>
+<p><a href="https://teamworkgraph.com/cli?utm_source=jira&amp;utm_medium=cta&amp;utm_campaign=jira_side_nav_v2">TWG</a> isn’t replacing your API integrations. It’s replacing the fifteen minutes you spend every day manually being the API integration — clicking between Jira and GitHub and Slack, holding the whole picture in your head because nothing else will.</p>
+<p>It won’t fix your mislabeled tickets. It won’t write your missing PR. But it will tell you, immediately and without flattery, exactly which of those problems you actually have — which turns out to be the more valuable thing most days.</p>
+<img src="https://medium.com/_/stat?event=post.clientViewed&amp;referrerSource=full_rss&amp;postId=1c343141d785" width="1" height="1" alt="">
+
+        </div>
+
+        <div class="blog-post-footer">
+          <p>
+            Read the full article on Medium:
+            <a href="https://medium.com/@deepan.ppgit/i-replaced-5-browser-tabs-with-one-cli-and-my-ai-agent-got-scary-good-1c343141d785?source=rss-80461a0c324d------2" target="_blank" rel="noopener noreferrer" class="medium-link">
+              View on Medium →
+            </a>
+          </p>
+        </div>
+      </article>
+    </div>
+  </body>
+</html>
