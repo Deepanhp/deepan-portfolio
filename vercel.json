@@ -1,0 +1,5 @@
+{
+  "rewrites": [
+    { "source": "/jarvis", "destination": "/jarvis.html" }
+  ]
+}

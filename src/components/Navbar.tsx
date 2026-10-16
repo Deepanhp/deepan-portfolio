@@ -23,21 +23,27 @@ const Navbar = () => {
     smoother.scrollTop(0);
     smoother.paused(true);
 
-    let links = document.querySelectorAll(".header ul a");
+    const links = document.querySelectorAll(".header ul a");
+    const handleNavigation = (e: Event) => {
+      if (window.innerWidth > 1024) {
+        e.preventDefault();
+        const element = e.currentTarget as HTMLAnchorElement;
+        const section = element.getAttribute("data-href");
+        if (section) smoother.scrollTo(section, true, "top top");
+      }
+    };
     links.forEach((elem) => {
-      let element = elem as HTMLAnchorElement;
-      element.addEventListener("click", (e) => {
-        if (window.innerWidth > 1024) {
-          e.preventDefault();
-          let elem = e.currentTarget as HTMLAnchorElement;
-          let section = elem.getAttribute("data-href");
-          smoother.scrollTo(section, true, "top top");
-        }
-      });
+      elem.addEventListener("click", handleNavigation);
     });
-    window.addEventListener("resize", () => {
+    const handleResize = () => {
       ScrollSmoother.refresh(true);
-    });
+    };
+    window.addEventListener("resize", handleResize);
+    return () => {
+      links.forEach((elem) => elem.removeEventListener("click", handleNavigation));
+      window.removeEventListener("resize", handleResize);
+      smoother?.kill();
+    };
   }, []);
   return (
     <>
@@ -59,7 +65,7 @@ const Navbar = () => {
             </a>
           </li>
           <li>
-            <a data-href="#work" href="#work">
+            <a data-href="#jarvis" href="#jarvis">
               <HoverLinks text="WORK" />
             </a>
           </li>

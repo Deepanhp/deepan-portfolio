@@ -56,6 +56,14 @@ async function generateSitemap() {
     </image:image>
   </url>
 
+  <!-- JARVIS Case Study -->
+  <url>
+    <loc>https://www.deepankumar.com/jarvis</loc>
+    <lastmod>${today}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
   <!-- About Section -->
   <url>
     <loc>https://www.deepankumar.com/#about</loc>

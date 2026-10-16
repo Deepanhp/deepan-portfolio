@@ -3,9 +3,10 @@ import WorkImage from "./WorkImage";
 import WorkGallery from "./WorkGallery";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-import { MdArrowBackIos, MdArrowForwardIos } from "react-icons/md";
+import { MdArrowBackIos, MdArrowForwardIos, MdArrowOutward } from "react-icons/md";
 import { useState, useRef, useEffect } from "react";
 import { createPortal } from "react-dom";
+import { Link } from "react-router-dom";
 
 gsap.registerPlugin(useGSAP);
 
@@ -18,6 +19,7 @@ interface Achievement {
   images?: string[];
   alt: string;
   contain?: boolean;
+  caseStudyHref?: string;
 }
 
 const achievements: Achievement[] = [
@@ -34,7 +36,8 @@ const achievements: Achievement[] = [
       "/images/mymu2026/mymu-5.jpeg",
       "/images/mymu2026/mymu-6.jpeg"
     ],
-    alt: "Deepan Kumar presenting JARVIS at G2 MYMU 2026"
+    alt: "Deepan Kumar presenting JARVIS at G2 MYMU 2026",
+    caseStudyHref: "/jarvis"
   },
   {
     id: "02",
@@ -194,6 +197,11 @@ const Work = () => {
                         </div>
                         <h4>Highlights</h4>
                         <p>{achievement.description}</p>
+                        {achievement.caseStudyHref && (
+                          <Link className="work-case-study-link" to={achievement.caseStudyHref} data-cursor="disable">
+                            Explore JARVIS case study <MdArrowOutward />
+                          </Link>
+                        )}
                       </div>
                       {achievement.images ? (
                         <WorkGallery

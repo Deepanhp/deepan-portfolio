@@ -7,6 +7,7 @@ import Landing from "./Landing";
 import Navbar from "./Navbar";
 import SocialIcons from "./SocialIcons";
 import WhatIDo from "./WhatIDo";
+import JarvisFeature from "./JarvisFeature";
 import Work from "./Work";
 import Blog from "./Blog";
 import ScrollProgress from "./ScrollProgress";
@@ -58,6 +59,7 @@ const MainContainer = ({ children }: PropsWithChildren) => {
             <Landing>{!isDesktopView && children}</Landing>
             <About />
             <WhatIDo />
+            <JarvisFeature />
             <Career />
             <Work />
             {isDesktopView && (
