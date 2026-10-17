@@ -5,6 +5,40 @@ export interface JarvisMetric {
   label?: string;
 }
 
+export interface JarvisReplayStep {
+  id: string;
+  time: string;
+  title: string;
+  status: "complete" | "gated";
+  description: string;
+  evidence: string;
+}
+
+export interface JarvisEvaluation {
+  label: string;
+  status: "pass" | "gated";
+  detail: string;
+}
+
+export interface JarvisArchitectureLayer {
+  id: string;
+  title: string;
+  description: string;
+  items: string[];
+}
+
+export interface JarvisDecision {
+  title: string;
+  choice: string;
+  reason: string;
+}
+
+export interface JarvisFailureMode {
+  trigger: string;
+  response: string;
+  boundary: string;
+}
+
 export interface JarvisStage {
   id: string;
   title: string;
@@ -39,6 +73,16 @@ export interface JarvisData {
   workflow: string[];
   metrics: JarvisMetric[];
   evidence: JarvisEvidence;
+  replay: {
+    id: string;
+    title: string;
+    disclosure: string;
+    steps: JarvisReplayStep[];
+    evaluations: JarvisEvaluation[];
+  };
+  architecture: JarvisArchitectureLayer[];
+  decisions: JarvisDecision[];
+  failureModes: JarvisFailureMode[];
 }
 
 export const jarvisData: JarvisData = {
@@ -90,9 +134,9 @@ export const jarvisData: JarvisData = {
   ],
   metrics: [
     { value: "10+", description: "proactive monitors", verified: true },
-    { value: "24/7", description: "engineering awareness", verified: true },
     { value: "7-stage", description: "autonomous loop", verified: true },
-    { value: "60%", description: "less manual coordination", verified: false, label: "Illustrative metric" },
+    { value: "6", description: "intelligence layers", verified: true },
+    { value: "9", description: "explicit guardrails", verified: true },
   ],
   evidence: {
     title: "From AI We Ask, to AI That Watches: Building JARVIS",
@@ -106,4 +150,77 @@ export const jarvisData: JarvisData = {
       "/images/mymu2026/mymu-6.jpeg",
     ],
   },
+  replay: {
+    id: "SIG-DEMO-042",
+    title: "API latency regression after a recent change",
+    disclosure: "Representative replay using synthetic identifiers and values. It demonstrates the system design without exposing private operational data.",
+    steps: [
+      {
+        id: "01",
+        time: "14:32:08",
+        title: "Signal fingerprinted",
+        status: "complete",
+        description: "A sustained p95 latency shift is separated from a known recurring alert and accepted as novel work.",
+        evidence: "fingerprint: api-latency / novelty: 0.94",
+      },
+      {
+        id: "02",
+        time: "14:32:11",
+        title: "Context grounded",
+        status: "complete",
+        description: "The context engine connects the signal to a recent change, its owner, affected paths, and prior remediation history.",
+        evidence: "4 sources cited / ownership resolved",
+      },
+      {
+        id: "03",
+        time: "14:32:16",
+        title: "Specialist dispatched",
+        status: "complete",
+        description: "A reliability specialist receives a bounded task, read-only production evidence, and an isolated code workspace.",
+        evidence: "tool scope: repo + tests / workspace isolated",
+      },
+      {
+        id: "04",
+        time: "14:34:51",
+        title: "Change evaluated",
+        status: "complete",
+        description: "The proposed patch is checked against focused tests, regression coverage, evidence grounding, and policy constraints.",
+        evidence: "tests: green / eval contract: satisfied",
+      },
+      {
+        id: "05",
+        time: "14:35:03",
+        title: "Human boundary preserved",
+        status: "gated",
+        description: "JARVIS prepares the decision package but cannot merge or communicate externally without explicit approval.",
+        evidence: "action: approval required",
+      },
+    ],
+    evaluations: [
+      { label: "Evidence grounded", status: "pass", detail: "Every conclusion points to a captured signal or repository artifact." },
+      { label: "Tool scope respected", status: "pass", detail: "The specialist stayed inside its declared read/write permissions." },
+      { label: "Regression covered", status: "pass", detail: "Focused verification and the affected test suite complete successfully." },
+      { label: "Consequential action", status: "gated", detail: "Merge and external communication remain human-controlled." },
+    ],
+  },
+  architecture: [
+    { id: "01", title: "Signals", description: "Continuously watch engineering systems without granting write access.", items: ["PR + CI events", "Errors + traces", "Performance", "Work queues"] },
+    { id: "02", title: "Context", description: "Turn a notification into an evidence-backed engineering brief.", items: ["Code graph", "Ownership", "Change history", "Prior outcomes"] },
+    { id: "03", title: "Reasoning", description: "Route bounded problems instead of relying on one general-purpose agent.", items: ["Triage model", "Confidence gate", "Specialist agents", "Model routing"] },
+    { id: "04", title: "Execution", description: "Give each task the smallest useful tool surface and isolated state.", items: ["Tool policies", "Workspaces", "Priority queue", "Retries"] },
+    { id: "05", title: "Verification", description: "Require deterministic evidence around probabilistic decisions.", items: ["Tests", "Evaluators", "Review loop", "Human approval"] },
+  ],
+  decisions: [
+    { title: "Bound autonomy", choice: "Agents propose; policy decides what may execute.", reason: "Probabilistic reasoning is useful for investigation, while consequential actions need deterministic control." },
+    { title: "Preserve durable state", choice: "Every workflow has an identity, owner, stage, and heartbeat.", reason: "Long-running work must survive restarts, expose stalls, and resume without duplicating action." },
+    { title: "Route to specialists", choice: "Narrow agents receive curated context and limited tools.", reason: "Smaller responsibilities improve evaluation, observability, and failure isolation." },
+    { title: "Verify outside the model", choice: "Tests, policies, and approvals are independent gates.", reason: "The agent cannot grade its own work or silently expand its authority." },
+  ],
+  failureModes: [
+    { trigger: "Duplicate signal", response: "Match the stable fingerprint and attach new evidence to existing work.", boundary: "No second agent is dispatched." },
+    { trigger: "Low-confidence diagnosis", response: "Return the evidence package with explicit uncertainty and missing context.", boundary: "Escalate instead of guessing." },
+    { trigger: "Tool or model timeout", response: "Checkpoint state, apply a bounded retry policy, and retain the attempt history.", boundary: "Retries cannot loop indefinitely." },
+    { trigger: "Stalled specialist", response: "Heartbeat expiry returns the task to controlled recovery with its workspace intact.", boundary: "Concurrency capacity is reclaimed safely." },
+    { trigger: "Unsafe proposed action", response: "Policy blocks execution and records the attempted capability and rationale.", boundary: "Approval cannot be inferred from model confidence." },
+  ],
 };

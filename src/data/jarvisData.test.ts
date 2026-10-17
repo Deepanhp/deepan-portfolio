@@ -9,13 +9,18 @@ describe("jarvisData", () => {
     ]);
     expect(jarvisData.monitors).toHaveLength(4);
     expect(jarvisData.capabilities).toHaveLength(6);
+    expect(jarvisData.replay.steps).toHaveLength(5);
+    expect(jarvisData.replay.evaluations).toHaveLength(4);
+    expect(jarvisData.architecture).toHaveLength(5);
+    expect(jarvisData.decisions).toHaveLength(4);
+    expect(jarvisData.failureModes).toHaveLength(5);
     expect(JSON.stringify(jarvisData)).not.toMatch(/api[_-]?key|cookie|internal\.url|@g2\.com/i);
   });
 
-  it("labels every unverified public metric", () => {
+  it("does not publish unverified impact metrics", () => {
     const unverified = jarvisData.metrics.filter((metric) => !metric.verified);
-    expect(unverified).toEqual([
-      expect.objectContaining({ value: "60%", label: "Illustrative metric" }),
-    ]);
+    expect(unverified).toEqual([]);
+    expect(jarvisData.metrics.map((metric) => metric.value)).not.toContain("60%");
+    expect(jarvisData.replay.disclosure).toMatch(/synthetic identifiers/i);
   });
 });
